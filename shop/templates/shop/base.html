@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{% block title %}My shop{% endblock %}</title>
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+      <a href="/" class="logo"><h1>MKM SHOPPING PORTAL</h1></a>
+    </div>
+    <div id="subheader">
+      <div	class="cart">
+		      {%	with	total_items=cart|length	%}
+				    {%	if	cart|length	>	0	%}
+						  <br><b>Your	cart :-	</b>
+						<a	href="{%	url	"cart:cart_detail"	%}">
+							<b>	{{	total_items	}}	item{{	total_items|pluralize	}}  ,  Rs. {{	cart.get_total_price	}}</b>
+						</a>
+				    {%	else	%}
+						  <h4>Your	cart	is	empty.</h4>
+				    {%	endif	%}
+		      {%	endwith	%}
+</div>
+    </div>
+    <div id="content">{% block content %} {% endblock %}</div>
+  </body>
+</html>
