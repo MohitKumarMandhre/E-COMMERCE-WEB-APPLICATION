@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '6si9s1ysrd*lf8s55e+&sc&jq(2h7p48i2nabsc+q0(!(@#_-%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'mkm-shopping-portal.herokuapp.com'
